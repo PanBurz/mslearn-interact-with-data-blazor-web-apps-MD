@@ -563,6 +563,7 @@ a.sign-in {
 
 input[type=range] {
     -webkit-appearance: none;
+    appearance: none;
     margin: 7.1px 0;
     height: 21px;
 }
@@ -590,9 +591,10 @@ input[type=range] {
         background: #d45352;
         cursor: pointer;
         -webkit-appearance: none;
+        appearance: none;
         margin-top: -7.1px;
     }
-
+    
     input[type=range]:focus::-webkit-slider-runnable-track {
         background: #e1e1e1;
     }
