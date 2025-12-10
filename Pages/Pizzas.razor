@@ -1,0 +1,48 @@
+﻿@page "/pizzas"
+@using BlazingPizza.Data
+@inject PizzaService PizzaSvc
+<div>
+<h1>Choose your pizza</h1>
+</div>
+<p>&nbsp;</p>
+<p>We have all these delicious recipes:</p><br />
+<p>&nbsp;</p>
+@if (todaysPizzas == null)
+{
+    <p>We're finding out what pizzas are available today...</p>
+}
+else
+{
+<table>
+ <thead>
+  <tr>
+   <th>Pizza Name</th>
+   <th>Description</th>
+   <th>Vegetarian?</th>
+   <th>Vegan?</th>
+   <th>Price</th>
+  </tr>
+ </thead>
+ <tbody>
+  @foreach (PizzaSpecial pizza in todaysPizzas)
+  {
+   <tr>
+    <td>@pizza.Name</td>
+    <td>@pizza.Description</td>
+    <td>@pizza.Name</td>
+    <td>@pizza.Name</td>
+    <td>@pizza.GetFormattedBasePrice()</td>
+   </tr>
+  }
+ </tbody>
+</table>
+}
+@code {
+    private PizzaSpecial[] todaysPizzas;
+
+    protected override async Task OnInitializedAsync()
+    {
+        todaysPizzas = await PizzaSvc.GetPizzasFromApiAsync();
+    }
+
+}
