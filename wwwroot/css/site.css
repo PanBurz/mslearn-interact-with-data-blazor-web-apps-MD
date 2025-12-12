@@ -53,7 +53,7 @@ form {
 
 .main {
     flex-grow: 1;
-    overflow-y: auto;
+    overflow-y: scroll;
     background: linear-gradient(rgba(0,0,0,0) 40%, rgba(0,0,0,0.4) 80%);
     padding: 1.5rem !important;
 }
