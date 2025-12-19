@@ -13,10 +13,12 @@ public class PizzaService
         HttpClient = httpClient;
         NavigationManager = navigationManager;
     }
+    /*
     public async Task<PizzaSpecial[]> GetPizzasAsync()
     {
         return await HttpClient.GetFromJsonAsync<PizzaSpecial[]>(NavigationManager.BaseUri + "specials");
     }
+    */
     public async Task<PizzaSpecial[]> GetPizzasFromApiAsync()
     {
         return await HttpClient.GetFromJsonAsync<PizzaSpecial[]>(NavigationManager.BaseUri + "specials");
